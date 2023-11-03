@@ -57,8 +57,8 @@ Fri Nov  3 12:46:16 2023
 
 ### 测试Jellyfin开启硬件加速：
 ```bash
-d@d:/fuck$ nvidia-smi
-Fri Nov  3 12:54:25 2023
+d@d:~$ nvidia-smi
+Fri Nov  3 14:08:31 2023
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 545.23.06              Driver Version: 545.23.06    CUDA Version: 12.3     |
 |-----------------------------------------+----------------------+----------------------+
@@ -67,7 +67,7 @@ Fri Nov  3 12:54:25 2023
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
 |   0  Tesla P4                       On  | 00000000:03:00.0 Off |                  Off |
-| N/A   41C    P0              25W /  75W |    197MiB /  8192MiB |      5%      Default |
+| N/A   41C    P0              24W /  75W |    801MiB /  8192MiB |      5%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 
@@ -76,7 +76,9 @@ Fri Nov  3 12:54:25 2023
 |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
 |        ID   ID                                                             Usage      |
 |=======================================================================================|
-|    0   N/A  N/A      8975      C   /usr/lib/jellyfin-ffmpeg/ffmpeg             195MiB |
+|    0   N/A  N/A      2231      C   /usr/lib/jellyfin-ffmpeg/ffmpeg             262MiB |
+|    0   N/A  N/A      3438      C   /usr/lib/jellyfin-ffmpeg/ffmpeg             245MiB |
+|    0   N/A  N/A      3993      C   /usr/lib/jellyfin-ffmpeg/ffmpeg             290MiB |
 +---------------------------------------------------------------------------------------+
 ```
 ![image](https://github.com/DHDAXCW/NVIDIA_Tesla-P4_devices/assets/74764072/10e91cea-a45d-477b-b5af-a3adc3530dbc)
