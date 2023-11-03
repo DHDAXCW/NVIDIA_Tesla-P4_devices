@@ -79,7 +79,7 @@ Fri Nov  3 12:54:25 2023
 |    0   N/A  N/A      8975      C   /usr/lib/jellyfin-ffmpeg/ffmpeg             195MiB |
 +---------------------------------------------------------------------------------------+
 ```
-![1695](https://github.com/DHDAXCW/NVIDIA_Tesla-P4_devices/assets/74764072/d282ecd2-3c06-4e31-a686-32778ec37cd0)
+![image](https://github.com/DHDAXCW/NVIDIA_Tesla-P4_devices/assets/74764072/10e91cea-a45d-477b-b5af-a3adc3530dbc)
 
 已成功视频硬解
 
