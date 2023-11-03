@@ -3,6 +3,12 @@
 ![image](https://github.com/DHDAXCW/NVIDIA_Tesla-P4_devices/assets/74764072/7bdb6734-221c-4a35-a820-06e99a049471)
 
 # 下载适用于 Linux Ubuntu 22.04 x86_64 的安装程序
+### 安装前卸载NVIDIA驱动
+```bash
+sudo apt-get --purge remove nvidia*  
+sudo apt-get --purge remove libnvidia*
+```
+
 ### 基础安装程序
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
@@ -13,12 +19,14 @@ sudo cp /var/cuda-repo-ubuntu2204-12-3-local/cuda-*-keyring.gpg /usr/share/keyri
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-3
 ```
+
 ### 驱动安装程序
 ```bash
 sudo apt-get install -y cuda-drivers
 sudo apt-get install -y nvidia-kernel-open-545
 sudo apt-get install -y cuda-drivers-545
 ```
+
 最后完成重启```sudo reboot```
 
 重启后再次运行```nvidia-smi``` 可以看到显卡信息。
