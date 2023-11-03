@@ -1,5 +1,6 @@
 # NVIDIA_Tesla-P4_Devices
 适用于 Linux Ubuntu 22.04 x86_64 安装Tesla-P4的显卡Cuda和驱动
+![image](https://github.com/DHDAXCW/NVIDIA_Tesla-P4_devices/assets/74764072/7bdb6734-221c-4a35-a820-06e99a049471)
 
 # 下载适用于 Linux Ubuntu 22.04 x86_64 的安装程序
 ### 基础安装程序
