@@ -91,14 +91,12 @@ ECC内存支持：P4支持ECC校验，开启后会损失一部分显存
 
 开启过后，显存可用为7611MB，关闭后可用为8121MB。
 
-通过命令 nvidia-smi可以看到设备上所有GPU的信息参数
-
-通过 nvidia-smi -i n -e 0/1 可关闭(0)/开启(1)  第n号GPU的编号。
-
-执行```nvidia-smi | grep Tesla```查看前面GPU编号：0
+通过```nvidia-smi | grep Tesla```查看前面GPU编号：0
 ```bash
 d@d:/fuck$ nvidia-smi | grep Tesla
 |   0  Tesla P4                       On  | 00000000:03:00.0 Off |                  Off |
+-----------------------------------------------------------------------------------------
+nvidia-smi -i n -e 0/1 可关闭(0)/开启(1) , n是GPU的编号。
 ```
 
 执行关闭ECC```sudo nvidia-smi -i 0 -e 0```重启后该设置生效。
