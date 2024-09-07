@@ -8,8 +8,12 @@
 sudo apt-get --purge remove nvidia*  
 sudo apt-get --purge remove libnvidia*
 ```
+### 安装驱动
+```bash
+sudo ubuntu-drivers autoinstall
+```
 
-### 基础安装程序
+### cuda工具安装
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
 sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -20,9 +24,8 @@ sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-6
 ```
 
-### 驱动安装程序
+### 旧版内核驱动安装程序
 ```bash
-sudo apt-get install -y nvidia-open
 sudo apt-get install -y cuda-drivers
 ```
 
@@ -33,42 +36,42 @@ sudo apt-get install -y cuda-drivers
 ```bash
 d@d:~$ nvidia-smi
 Fri Nov  3 12:46:16 2023
-+---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 545.23.06              Driver Version: 545.23.06    CUDA Version: 12.3     |
-|-----------------------------------------+----------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
-|                                         |                      |               MIG M. |
-|=========================================+======================+======================|
-|   0  Tesla P4                       On  | 00000000:03:00.0 Off |                  Off |
-| N/A   38C    P8               6W /  75W |      0MiB /  8192MiB |      0%      Default |
-|                                         |                      |                  N/A |
-+-----------------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla P4                       Off |   00000000:AF:00.0 Off |                  Off |
+| N/A   38C    P8              6W /   75W |       0MiB /   8192MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
 
-+---------------------------------------------------------------------------------------+
-| Processes:                                                                            |
-|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
-|        ID   ID                                                             Usage      |
-|=======================================================================================|
-|  No running processes found                                                           |
-+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
 ```
 
 ### 测试Jellyfin开启硬件加速：
 ```bash
 d@d:~$ nvidia-smi
 Fri Nov  3 14:08:31 2023
-+---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 545.23.06              Driver Version: 545.23.06    CUDA Version: 12.3     |
-|-----------------------------------------+----------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
-|                                         |                      |               MIG M. |
-|=========================================+======================+======================|
-|   0  Tesla P4                       On  | 00000000:03:00.0 Off |                  Off |
-| N/A   41C    P0              24W /  75W |    801MiB /  8192MiB |      5%      Default |
-|                                         |                      |                  N/A |
-+-----------------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla P4                       Off |   00000000:AF:00.0 Off |                  Off |
+| N/A   38C    P8              6W /   75W |       0MiB /   8192MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
 
 +---------------------------------------------------------------------------------------+
 | Processes:                                                                            |
